@@ -44,4 +44,12 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
         categoryRepository.deleteById(id);
     }
 
+    @Override
+    @Transactional
+    public ProductCategoryEntity update(Long id, ProductCategoryEntity productCategoryEntity) {
+        var existed = getById(id);
+        productCategoryEntity.setId(existed.getId());
+        return categoryRepository.save(productCategoryEntity);
+    }
+
 }

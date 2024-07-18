@@ -15,4 +15,6 @@ public interface ProductService {
 
     List<ProductEntity> getAllByCategoryId(Long categoryId);
 
+    ProductEntity update(Long id, ProductEntity productEntity);
+
 }

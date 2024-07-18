@@ -41,3 +41,6 @@ alter table product add column original_currency varchar(20);
 
 --changeset roman_gurinovich:3
 insert into product_category(title) values ('ROOT_CATEGORY');
+
+--changeset roman_gurinovich:4
+insert into measurement_type(name) values ('ВЕС'), ('ОБЪЕМ');

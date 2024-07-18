@@ -36,6 +36,12 @@ public class CategoryController {
         return ResponseEntity.ok(productCategoryMapper.toDTO(saved));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<ProductCategory> update(@PathVariable("id") Long id, @RequestBody ProductCategory category){
+        var updated = productCategoryService.update(id, productCategoryMapper.toEntity(category));
+        return ResponseEntity.ok(productCategoryMapper.toDTO(updated));
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteById(@PathVariable("id") Long id){

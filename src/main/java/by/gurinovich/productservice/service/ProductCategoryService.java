@@ -15,4 +15,6 @@ public interface ProductCategoryService {
 
     void deleteById(Long id);
 
+    ProductCategoryEntity update(Long id, ProductCategoryEntity productCategoryEntity);
+
 }

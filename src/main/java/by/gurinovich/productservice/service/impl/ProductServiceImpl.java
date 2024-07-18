@@ -45,4 +45,12 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductEntity> getAllByCategoryId(Long categoryId) {
         return productRepository.findAllByCategoryId(categoryId);
     }
+
+    @Override
+    @Transactional
+    public ProductEntity update(Long id, ProductEntity productEntity) {
+        var before = getById(id);
+        productEntity.setId(before.getId());
+        return productRepository.save(productEntity);
+    }
 }
